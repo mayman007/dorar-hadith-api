@@ -1,3 +1,5 @@
+const path = require('path');
+
 const express = require('express');
 const rateLimit = require('express-rate-limit');
 const cors = require('cors');
@@ -16,7 +18,7 @@ const AppError = require('./utils/AppError');
 
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
-const swaggerDocument = YAML.load('api-docs/openapi.yaml');
+const swaggerDocument = YAML.load(path.join(__dirname, 'api-docs', 'openapi.yaml'));
 
 const app = express();
 
