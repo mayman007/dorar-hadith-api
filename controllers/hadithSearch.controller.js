@@ -148,8 +148,11 @@ class HadithSearchController {
             book,
             bookId,
             numberOrPage,
-            grade,
-            explainGrade,
+            // grade and explainGrade are destructured from parsedInfo
+            // grade will hold the original 'درجة الحديث'
+            // explainGrade will hold the original 'خلاصة حكم المحدث'
+            grade: originalGrade, // Renaming to avoid confusion in the return object
+            explainGrade: originalExplainGrade, // Renaming to avoid confusion
             takhrij,
             sharhId
           } = parsedInfo;
@@ -170,8 +173,8 @@ class HadithSearchController {
             book,
             bookId,
             numberOrPage,
-            grade,
-            explainGrade,
+            grade: originalExplainGrade, // Assign original explainGrade to grade
+            explainGrade: originalGrade, // Assign original grade to explainGrade
             takhrij,
             hadithId,
             hasSimilarHadith: !!similarHadithDorar,
